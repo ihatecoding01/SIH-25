@@ -7,6 +7,7 @@ import { supabase } from './lib/supabase';
 import AuthScreen from './screens/AuthScreen';
 import MapScreen from './screens/MapScreen';
 import ProfileScreen from './screens/ProfileScreen';
+import HomeScreen from './screens/HomeScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -27,7 +28,7 @@ export default function App() {
       {session && session.user ? (
         <Tab.Navigator>
           <Tab.Screen name="Home">
-            {() => <ProfileScreen session={session} />}
+            {() => <HomeScreen session={session} />}
           </Tab.Screen>
           <Tab.Screen name="Map">
             {() => <MapScreen session={session} />}
